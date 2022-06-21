@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16",
+    "typescript": "^4.7.3"
+  },
+  "name": "trynode",
+  "version": "1.0.0",
+  "description": "hello",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

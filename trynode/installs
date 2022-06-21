@@ -1,0 +1,7 @@
+Try using the following to install node on your device:
+https://github.com/nvm-sh/nvm
+https://github.com/coreybutler/nvm-windows
+
+
+or reference on what we did today, check out files import.js and print.js
+https://github.com/dr-shakya/itonics-node-training/tree/main/basic
