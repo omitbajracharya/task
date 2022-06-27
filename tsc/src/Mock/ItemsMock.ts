@@ -3,32 +3,32 @@ import { Items } from '../Contracts/Items';
 export let dataItems: Array<Items> = [
     {
         id: 1,
-        title: 'social',
-        body: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
+        name: 'social',
+        description: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
     },
     {
         id: 2,
-        title: 'ethics',
-        body: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
+        name: 'ethics',
+        description: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
     },
     {
         id: 3,
-        title: 'knowledge',
-        body: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
+        name: 'knowledge',
+        description: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
     },
     {
         id: 4,
-        title: 'family',
-        body: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
+        name: 'family',
+        description: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
     },
     {
         id: 5,
-        title: 'health',
-        body: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
+        name: 'health',
+        description: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
     },
     {
         id: 6,
-        title: 'politics',
-        body: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
+        name: 'politics',
+        description: 'sfsafdas  sdfasdfsdf sdf asdfsdf f asfsdfasdfsdffd'
     }
 ];

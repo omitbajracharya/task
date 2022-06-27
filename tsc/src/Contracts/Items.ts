@@ -1,5 +1,5 @@
 export interface Items{
-    id: number;
-    title: string;
-    body: string;
+    id:number,
+    name:string,
+    description:string
 }

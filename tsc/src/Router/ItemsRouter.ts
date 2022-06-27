@@ -1,5 +1,7 @@
 import { Request, Response, Router } from 'express';
+import { AppDataSource } from '../app';
 import { Items } from '../Contracts/Items';
+import { Photo } from '../entity/Photo';
 import { addItem, deleteItem, findAll, findById, updatedItem } from '../Services/ItemsService';
 
 export const itemsRouter: Router = Router();
@@ -10,7 +12,8 @@ export const itemsRouter: Router = Router();
 itemsRouter.get('/', async(req: Request, res:Response) => {
     try {
         const result = await findAll();
-        res.send(result);
+        
+        res.json(result);
     } catch(error) {
         res.status(404).send('Error');
     }
@@ -19,7 +22,8 @@ itemsRouter.get('/', async(req: Request, res:Response) => {
 //Get by ID
 itemsRouter.get('/:id', async (req: Request, res: Response) => {
     try {
-        const result = await findById(Number(req.params.id));
+        const result = await findById(+req.params.id);
+        // const result = await AppDataSource.manager.findOne(Photo,1);
         res.json(result);
     }catch(error){
         res.status(404).json('Error');
@@ -29,10 +33,9 @@ itemsRouter.get('/:id', async (req: Request, res: Response) => {
 //POST http method
 itemsRouter.post('/', async(req:Request, res:Response) => {
     //for new data
-    const newDataItems:Items = {
-        id: Number(req.body.id),
-        title: req.body.title,
-        body: req.body.body
+    const newDataItems: {name:string,description:string} = {
+        name: req.body.name,
+        description: req.body.description
     }
     try{
         const result = await addItem(newDataItems)
