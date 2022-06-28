@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express';
-import { AppDataSource } from '../app';
-import { Items } from '../Contracts/Items';
-import { Photo } from '../entity/Photo';
+// import { AppDataSource } from '../connection';
+// import { Items } from '../Contracts/Items';
+// import { Photo } from '../entity/Photo';
 import { addItem, deleteItem, findAll, findById, updatedItem } from '../Services/ItemsService';
 
 export const itemsRouter: Router = Router();
@@ -33,15 +33,15 @@ itemsRouter.get('/:id', async (req: Request, res: Response) => {
 //POST http method
 itemsRouter.post('/', async(req:Request, res:Response) => {
     //for new data
-    const newDataItems: {name:string,description:string} = {
-        name: req.body.name,
-        description: req.body.description
-    }
+    // const newDataItems: {name:string,description:string} = {
+    //     name: req.body.name,
+    //     description: req.body.description
+    // }
     try{
-        const result = await addItem(newDataItems)
-        res.status(200).json(result)
+        const result = await addItem(req.body);
+        res.status(200).json(result);
     }catch(error){
-        res.json('Error')
+        res.json('Error');
     }
 });
 
@@ -52,7 +52,6 @@ itemsRouter.put('/:id', async(req:Request, res:Response) => {
 
     try{
         const result = await updatedItem(id, req.body);
-        console.log(result);
         res.status(200).json(result);
     }catch(error){
         res.json(error)
