@@ -1,5 +1,7 @@
 import { DataSource } from "typeorm";
 import { Photo } from "./src/entity/Photo";
+import { Profile } from "./src/entity/Profile";
+import { User } from "./src/entity/User";
 require('dotenv').config();
 const uname = process.env.TYPEORM_USERNAME
 const pwd=process.env.TYPEORM_PASSWORD 
@@ -13,7 +15,7 @@ export const AppDataSource = new DataSource({
     password:pwd,
     database:db,
     synchronize:true,
-    entities:[Photo],
+    entities:[Photo,Profile,User],
     logging: true
    })
    AppDataSource.initialize()

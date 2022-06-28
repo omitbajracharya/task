@@ -3,7 +3,7 @@ import { itemsRouter } from './Router/ItemsRouter';
 import bodyParser from 'body-parser';
 require('dotenv').config();
 
-// export class App{
+
 const PORT = process.env.PORT || 3000;
 
 
@@ -11,8 +11,8 @@ const app: Express = express();
 
 app.use(bodyParser.json());
 app.use('/items', itemsRouter);
+// app.use('/users',userRouter);
 
 app.listen(PORT, () => {
     console.log('Listening on port: ', PORT);
 });
-// }
