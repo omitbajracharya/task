@@ -16,10 +16,7 @@ export const AppDataSource = new DataSource({
     database:db,
     synchronize:true,
     entities:[Photo,Profile,User],
-    logging: true
+    logging: false
    })
-   AppDataSource.initialize()
-   .then(()=>{
-       console.log("DB Connected..");
-   }).catch((e)=>{console.log("Error:"+e)});
+   
    

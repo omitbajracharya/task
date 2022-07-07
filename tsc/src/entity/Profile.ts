@@ -7,7 +7,7 @@ export class Profile{
 
     @Column()
     gender: string
-
+   
     @Column()
     photo: string
     
