@@ -22,11 +22,9 @@ export const findById = async (req: Request, res: Response) => {
 //for post method
 export const addUser =  async(req: Request, res: Response) => {
     //Inserting...
-    const newUser = {
-        name: req.body.name,
-        profile: req.body.profile
-    }
+    const newUser = req.body;
     try {
+        // 1-1 with profile
         const result = await AppDataSource.getRepository(User).save(newUser)
         console.log(result);
         res.json({
@@ -49,6 +47,7 @@ export const addUser =  async(req: Request, res: Response) => {
 
 //for put method
 export const updatedUser = async (req: Request, res: Response) => {
+    //uid
     let pid: number = Number(req.params.id)
     let user: User = req.body
     const userRepository = AppDataSource.getRepository(User);

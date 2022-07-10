@@ -1,0 +1,4 @@
+INSERT INTO `comment`(`comment`, `photoId`, `userId`) VALUES ('','','')
+INSERT INTO `photo`(`name`, `description`, `uid`) VALUES ('','','')
+INSERT INTO `profile`(`gender`, `photo`, `uid`) VALUES ('','','')
+INSERT INTO `user`(`name`) VALUES ('')

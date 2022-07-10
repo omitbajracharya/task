@@ -8,8 +8,4 @@ export class User {
 
     @Column({length: 100})
     name: string
-
-    @OneToOne(()=>Profile,{eager:true,onDelete:"CASCADE"})
-    @JoinColumn({name:"pid"})
-    profile:Profile
 }

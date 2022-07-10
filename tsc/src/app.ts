@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import { AppDataSource } from '../connection';
 import { userRouter } from './Router/userRouter';
 import { profileRouter } from './Router/pofileRouter';
+import { commentRouter } from './Router/commentRouter';
 require('dotenv').config();
 
 
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 // app.use('/items', itemsRouter);
 app.use('/users',userRouter);
 app.use('/profiles',profileRouter);
+app.use('/comments',commentRouter);
 
 app.listen(PORT, () => {
     console.log('Listening on port: ', PORT);

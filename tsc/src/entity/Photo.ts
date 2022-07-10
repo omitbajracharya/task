@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, OneToOne, ManyToOne, JoinColumn } from "typeorm"
+import { User } from "./User"
 
 @Entity()
 export class Photo extends BaseEntity {
@@ -13,4 +14,8 @@ export class Photo extends BaseEntity {
     @Column("text")
     description: string
     
+    @ManyToOne(()=>User,{eager:true,onDelete:"CASCADE"})
+    @JoinColumn({name:"uid"})
+    user:User
+
 }

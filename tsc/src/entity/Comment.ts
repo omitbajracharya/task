@@ -1,17 +1,24 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, ManyToOne, JoinColumn } from "typeorm"
+import { Photo } from "./Photo"
+import { User } from "./User"
 
 @Entity()
-export class Photo extends BaseEntity {
+export class Comment extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({
-        length: 100,
-    })
-    name: string
-
     // @ManyToOne(type => Student, student => student.projects) student: Student; 
     @Column("text")
-    description: string
+    comment: string
+
+    @ManyToOne(()=>Photo,{eager:true,onDelete:"CASCADE"})
+    @JoinColumn()
+    photo : Photo
+
+  
+
+    @ManyToOne(()=>User,{eager:true,onDelete:"CASCADE"})
+    @JoinColumn()
+    user : User
     
 }
